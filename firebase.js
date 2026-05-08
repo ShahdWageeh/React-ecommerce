@@ -1,17 +1,15 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics"
-import { getAuth } from "firebase/auth"
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBKNkgoi7axKxpu1Pm1IicbbcWyd8Ly5pE",
-    authDomain: "ecommerce-aeaf9.firebaseapp.com",
-    projectId: "ecommerce-aeaf9",
-    storageBucket: "ecommerce-aeaf9.firebasestorage.app",
-    messagingSenderId: "402771073799",
-    appId: "1:402771073799:web:c9c733dcb41590fdc203a2",
-    measurementId: "G-KWFY8E3H83"
-  };
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+};
 
-  const app = initializeApp(firebaseConfig);
-  // const analytics = getAnalytics(app);
-  export const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
